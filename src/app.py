@@ -1,6 +1,9 @@
 
+# import json
 import json
+# import csv
 import csv
+# import flask library
 from flask import Flask
 
 # Python program to calculate BMI
@@ -28,7 +31,7 @@ class BMI:
 #Read input json file
 def read_json():
     list_of_row = []
-    with open('input.json') as file:
+    with open('src/input.json') as file:
         alllines = json.load(file)
         for row in alllines:
             list_of_row.append(row)
