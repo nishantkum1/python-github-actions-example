@@ -105,10 +105,10 @@ def index():
     contents = read_json()
     #print(contents)
     finaldata = resultdata_with_bmi(contents)
-    print('final data with BMI-->',finaldata)
+    #print('final data with BMI-->',finaldata)
     #result = write_csv(finaldata)
     #print(result)
-    return finaldata
+    return json.dumps(finaldata)
 
 if __name__ == "__main__":
      app.run()
