@@ -1,18 +1,10 @@
-# from flask import Flask
-
-# app = Flask(__name__)
-
-# @app.route("/")
-# def index():
-#     return "Hello, Nishant!"
-
-# if __name__ == "__main__":
-#     app.run()
-
-# Python program to calculate BMI
 
 import json
 import csv
+from flask import Flask
+
+# Python program to calculate BMI
+
 
 #BMI category class for Table 1
 class BMI:
@@ -106,11 +98,18 @@ def write_csv(data):
             csv_data.writerows([row])
     return 'csv file added successfully..'
 
+app = Flask(__name__)
 
-if __name__ == '__main__':
+@app.route("/")
+def index():
     contents = read_json()
     #print(contents)
     finaldata = resultdata_with_bmi(contents)
     print('final data with BMI-->',finaldata)
     #result = write_csv(finaldata)
     #print(result)
+    return finaldata
+
+if __name__ == "__main__":
+     app.run()
+
